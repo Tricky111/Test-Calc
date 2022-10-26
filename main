@@ -31,7 +31,7 @@ int main()
 	float height;
 	float length;
 
-	cout << "Enter 0 for all values to end the program";
+	cout << "Enter 0 for radius to the program";
 
 	do {
 		cout << "\n\nEnter value for radius(cm): ";
@@ -51,6 +51,6 @@ int main()
 		cout << "\nThe volume for the cylinder is: " << volumecylinder;
 		cout << "\nThe volume for the cube is: " << volumecube;
 		cout << "\nThe area for the circle is: " << areaofcircle << '\n\n';
-	} while (radius, height, length != 0);
+	} while (radius != 0);
 	return 0;
 }
