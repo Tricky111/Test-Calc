@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <stdio.h>
+
+using namespace std;
+
+string calcstring;
+
+float const my_pi = 3.1415929;
+
+
+float calcareacircle(float radius)
+{
+	float areacircle = my_pi * radius * radius;
+	return areacircle;
+}
+float calcvolcylinder(float radius, float height)
+{
+	float volcylinder = calcareacircle(radius) * height;
+	return volcylinder;
+}
+float calcvolcube(float length)
+{
+	float volcube = length * length * length;
+	return volcube;
+}
+int main()
+{
+	float radius;
+	float height;
+	float length;
+
+	cout << "Enter 0 for all values to end the program";
+
+	do {
+		cout << "\n\nEnter value for radius(cm): ";
+		getline(cin, calcstring);
+		stringstream(calcstring) >> radius;
+		cout << "Enter value for height(cm): ";
+		getline(cin, calcstring);
+		stringstream(calcstring) >> height;
+		cout << "Enter value for length(cm): ";
+		getline(cin, calcstring);
+		stringstream(calcstring) >> length;
+
+		float volumecylinder = calcvolcylinder(radius, height);
+		float areaofcircle = calcareacircle(radius);
+		float volumecube = calcvolcube(length);
+
+		cout << "\nThe volume for the cylinder is: " << volumecylinder;
+		cout << "\nThe volume for the cube is: " << volumecube;
+		cout << "\nThe area for the circle is: " << areaofcircle << '\n\n';
+	} while (radius, height, length != 0);
+	return 0;
+}
